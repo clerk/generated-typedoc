@@ -1,0 +1,68 @@
+The `clerkMiddleware()` helper integrates Clerk authentication into your Next.js application through Middleware. `clerkMiddleware()` is compatible with both the App and Pages routers.
+
+## Call Signature
+
+### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `handler` | `ClerkMiddlewareHandler` |
+| `options`? | [`ClerkMiddlewareOptions`](../interfaces/clerk-middleware-options.mdx) |
+
+### Returns
+
+### Example
+
+```ts
+export default clerkMiddleware((auth, request, event) => { ... }, options);
+```
+
+## Call Signature
+
+### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `handler` | `ClerkMiddlewareHandler` |
+| `options`? | `ClerkMiddlewareOptionsCallback` |
+
+### Returns
+
+### Example
+
+```ts
+export default clerkMiddleware((auth, request, event) => { ... }, (req) => options);
+```
+
+## Call Signature
+
+### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `options`? | [`ClerkMiddlewareOptions`](../interfaces/clerk-middleware-options.mdx) |
+
+### Returns
+
+### Example
+
+```ts
+export default clerkMiddleware(options);
+```
+
+## Call Signature
+
+### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `request` | `NextRequest` |
+| `event` | `NextFetchEvent` |
+
+### Returns
+
+### Example
+
+```ts
+export default clerkMiddleware;
+```

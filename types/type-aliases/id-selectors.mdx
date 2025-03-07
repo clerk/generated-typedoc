@@ -1,0 +1,10 @@
+> **IdSelectors**\<`E`, `Id`\>: `Id` *extends* `never` ? `never` : `` `${E}__${Id}` ``
+
+Create a type union consisting of the base element with all valid ids appended
+
+## Type Parameters
+
+| Type Parameter | Default type |
+| ------ | ------ |
+| `E` *extends* `string` | - |
+| `Id` *extends* `string` \| `undefined` | `never` |

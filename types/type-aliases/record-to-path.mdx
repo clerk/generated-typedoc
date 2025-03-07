@@ -1,0 +1,12 @@
+> **RecordToPath**\<`T`\>: `PathImpl2`\<`T`\> *extends* `string` \| keyof `T` ? `PathImpl2`\<`T`\> : keyof `T`
+
+Used to construct a type union containing all the keys (even if nested) of an object defined as const
+const obj =  { a: { b: '' }, c: '' }  as const;
+type Paths = RecordToPath<typeof obj>
+Paths contains: 'a' | 'a.b' | 'c'
+
+## Type Parameters
+
+| Type Parameter |
+| ------ |
+| `T` |

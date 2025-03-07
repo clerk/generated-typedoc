@@ -1,0 +1,67 @@
+> **UseAuthReturn**: \{ `actor`: `undefined`; `getToken`: `GetToken`; `has`: `CheckAuthorizationSignedOut`; `isLoaded`: `false`; `isSignedIn`: `undefined`; `orgId`: `undefined`; `orgRole`: `undefined`; `orgSlug`: `undefined`; `sessionId`: `undefined`; `signOut`: `SignOut`; `userId`: `undefined`; \} \| \{ `actor`: `null`; `getToken`: `GetToken`; `has`: `CheckAuthorizationWithoutOrgOrUser`; `isLoaded`: `true`; `isSignedIn`: `false`; `orgId`: `null`; `orgRole`: `null`; `orgSlug`: `null`; `sessionId`: `null`; `signOut`: `SignOut`; `userId`: `null`; \} \| \{ `actor`: [`ActJWTClaim`](../interfaces/act-jwt-claim.mdx) \| `null`; `getToken`: `GetToken`; `has`: `CheckAuthorizationWithCustomPermissions`; `isLoaded`: `true`; `isSignedIn`: `true`; `orgId`: `null`; `orgRole`: `null`; `orgSlug`: `null`; `sessionId`: `string`; `signOut`: `SignOut`; `userId`: `string`; \} \| \{ `actor`: [`ActJWTClaim`](../interfaces/act-jwt-claim.mdx) \| `null`; `getToken`: `GetToken`; `has`: `CheckAuthorizationWithCustomPermissions`; `isLoaded`: `true`; `isSignedIn`: `true`; `orgId`: `string`; `orgRole`: [`OrganizationCustomRoleKey`](organization-custom-role-key.mdx); `orgSlug`: `string` \| `null`; `sessionId`: `string`; `signOut`: `SignOut`; `userId`: `string`; \}
+
+## Type declaration
+
+\{ `actor`: `undefined`; `getToken`: `GetToken`; `has`: `CheckAuthorizationSignedOut`; `isLoaded`: `false`; `isSignedIn`: `undefined`; `orgId`: `undefined`; `orgRole`: `undefined`; `orgSlug`: `undefined`; `sessionId`: `undefined`; `signOut`: `SignOut`; `userId`: `undefined`; \}
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `actor` | `undefined` | JWT Actor - [RFC8693](https://www.rfc-editor.org/rfc/rfc8693.html#name-act-actor-claim). |
+| `getToken` | `GetToken` | A function that retrieves the current user's session token or a custom JWT template. Returns a promise that resolves to the token. See the [reference doc](/docs/references/javascript/session#get-token). |
+| `has` | `CheckAuthorizationSignedOut` | A function that checks if the user has specific permissions or roles. See the [reference doc](/docs/references/backend/types/auth-object#has). |
+| `isLoaded` | `false` | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
+| `isSignedIn` | `undefined` | A boolean that indicates whether a user is currently signed in. |
+| `orgId` | `undefined` | The ID of the user's active organization. |
+| `orgRole` | `undefined` | The current user's role in their active organization. |
+| `orgSlug` | `undefined` | The URL-friendly identifier of the user's active organization. |
+| `sessionId` | `undefined` | The ID for the current session. |
+| `signOut` | `SignOut` | A function that signs out the current user. Returns a promise that resolves when complete. See the [reference doc](/docs/references/javascript/clerk#sign-out). |
+| `userId` | `undefined` | The ID of the current user. |
+
+\{ `actor`: `null`; `getToken`: `GetToken`; `has`: `CheckAuthorizationWithoutOrgOrUser`; `isLoaded`: `true`; `isSignedIn`: `false`; `orgId`: `null`; `orgRole`: `null`; `orgSlug`: `null`; `sessionId`: `null`; `signOut`: `SignOut`; `userId`: `null`; \}
+
+| Name | Type |
+| ------ | ------ |
+| `actor` | `null` |
+| `getToken` | `GetToken` |
+| `has` | `CheckAuthorizationWithoutOrgOrUser` |
+| `isLoaded` | `true` |
+| `isSignedIn` | `false` |
+| `orgId` | `null` |
+| `orgRole` | `null` |
+| `orgSlug` | `null` |
+| `sessionId` | `null` |
+| `signOut` | `SignOut` |
+| `userId` | `null` |
+
+\{ `actor`: [`ActJWTClaim`](../interfaces/act-jwt-claim.mdx) \| `null`; `getToken`: `GetToken`; `has`: `CheckAuthorizationWithCustomPermissions`; `isLoaded`: `true`; `isSignedIn`: `true`; `orgId`: `null`; `orgRole`: `null`; `orgSlug`: `null`; `sessionId`: `string`; `signOut`: `SignOut`; `userId`: `string`; \}
+
+| Name | Type |
+| ------ | ------ |
+| `actor` | [`ActJWTClaim`](../interfaces/act-jwt-claim.mdx) \| `null` |
+| `getToken` | `GetToken` |
+| `has` | `CheckAuthorizationWithCustomPermissions` |
+| `isLoaded` | `true` |
+| `isSignedIn` | `true` |
+| `orgId` | `null` |
+| `orgRole` | `null` |
+| `orgSlug` | `null` |
+| `sessionId` | `string` |
+| `signOut` | `SignOut` |
+| `userId` | `string` |
+
+\{ `actor`: [`ActJWTClaim`](../interfaces/act-jwt-claim.mdx) \| `null`; `getToken`: `GetToken`; `has`: `CheckAuthorizationWithCustomPermissions`; `isLoaded`: `true`; `isSignedIn`: `true`; `orgId`: `string`; `orgRole`: [`OrganizationCustomRoleKey`](organization-custom-role-key.mdx); `orgSlug`: `string` \| `null`; `sessionId`: `string`; `signOut`: `SignOut`; `userId`: `string`; \}
+
+| Name | Type |
+| ------ | ------ |
+| `actor` | [`ActJWTClaim`](../interfaces/act-jwt-claim.mdx) \| `null` |
+| `getToken` | `GetToken` |
+| `has` | `CheckAuthorizationWithCustomPermissions` |
+| `isLoaded` | `true` |
+| `isSignedIn` | `true` |
+| `orgId` | `string` |
+| `orgRole` | [`OrganizationCustomRoleKey`](organization-custom-role-key.mdx) |
+| `orgSlug` | `string` \| `null` |
+| `sessionId` | `string` |
+| `signOut` | `SignOut` |
+| `userId` | `string` |
