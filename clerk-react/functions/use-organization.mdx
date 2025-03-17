@@ -3,20 +3,10 @@ The `useOrganization()` hook retrieves attributes of the currently active organi
 ## Parameters
 
 | Parameter | Type |
-| ------ | ------ |
-| `params`? | `T` |
+| --------- | ---- |
+| `params`? | `T`  |
 
 ## Returns
-
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| <a id="domains"></a> `domains` | `null` \| `PaginatedResourcesWithDefault`\<`OrganizationDomainResource`\> \| [`PaginatedResources`](../../shared/react/types/interfaces/paginated-resources.mdx)\<`OrganizationDomainResource`, `T`\[`"membershipRequests"`\] *extends* \{ `infinite`: `true`; \} ? `true` : `false`\> | Includes a paginated list of the organization's domains. |
-| <a id="invitations"></a> `invitations` | `null` \| `PaginatedResourcesWithDefault`\<`OrganizationInvitationResource`\> \| [`PaginatedResources`](../../shared/react/types/interfaces/paginated-resources.mdx)\<`OrganizationInvitationResource`, `T`\[`"invitations"`\] *extends* \{ `infinite`: `true`; \} ? `true` : `false`\> | Includes a paginated list of the organization's invitations. |
-| <a id="isloaded"></a> `isLoaded` | `boolean` | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
-| <a id="membership"></a> `membership` | `undefined` \| `null` \| `OrganizationMembershipResource` | The current organization membership. |
-| <a id="membershiprequests"></a> `membershipRequests` | `null` \| `PaginatedResourcesWithDefault`\<`OrganizationMembershipRequestResource`\> \| [`PaginatedResources`](../../shared/react/types/interfaces/paginated-resources.mdx)\<`OrganizationMembershipRequestResource`, `T`\[`"membershipRequests"`\] *extends* \{ `infinite`: `true`; \} ? `true` : `false`\> | Includes a paginated list of the organization's membership requests. |
-| <a id="memberships"></a> `memberships` | `null` \| `PaginatedResourcesWithDefault`\<`OrganizationMembershipResource`\> \| [`PaginatedResources`](../../shared/react/types/interfaces/paginated-resources.mdx)\<`OrganizationMembershipResource`, `T`\[`"memberships"`\] *extends* \{ `infinite`: `true`; \} ? `true` : `false`\> | Includes a paginated list of the organization's memberships. |
-| <a id="organization"></a> `organization` | `undefined` \| `null` \| `OrganizationResource` | The currently active organization. |
 
 ## Examples
 
@@ -24,14 +14,14 @@ The `useOrganization()` hook retrieves attributes of the currently active organi
 
 To keep network usage to a minimum, developers are required to opt-in by specifying which resource they need to fetch and paginate through. By default, the `memberships`, `invitations`, `membershipRequests`, and `domains` attributes are not populated. You must pass `true` or an object with the desired properties to fetch and paginate the data.
 
-```jsx
+```tsx
 // invitations.data will never be populated.
-const { invitations } = useOrganization()
+const { invitations } = useOrganization();
 
 // Use default values to fetch invitations, such as initialPage = 1 and pageSize = 10
 const { invitations } = useOrganization({
   invitations: true,
-})
+});
 
 // Pass your own values to fetch invitations
 const { invitations } = useOrganization({
@@ -39,21 +29,21 @@ const { invitations } = useOrganization({
     pageSize: 20,
     initialPage: 2, // skips the first page
   },
-})
+});
 
 // Aggregate pages in order to render an infinite list
 const { invitations } = useOrganization({
   invitations: {
     infinite: true,
   },
-})
+});
 ```
 
 ### Infinite pagination
 
 The following example demonstrates how to use the `infinite` property to fetch and append new data to the existing list. The `memberships` attribute will be populated with the first page of the organization's memberships. When the "Load more" button is clicked, the `fetchNext` helper function will be called to append the next page of memberships to the list.
 
-```jsx
+```tsx
 import { useOrganization } from '@clerk/clerk-react'
 
 export default function MemberList() {
@@ -98,7 +88,7 @@ The following example demonstrates how to use the `fetchPrevious` and `fetchNext
 
 Notice the difference between this example's pagination and the infinite pagination example above.
 
-```jsx
+```tsx
 import { useOrganization } from '@clerk/clerk-react'
 
 export default function MemberList() {

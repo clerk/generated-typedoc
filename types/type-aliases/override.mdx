@@ -1,13 +1,4 @@
-> **Override**\<`T`, `U`\>: `Omit`\<`T`, keyof `U`\> & `U`
-
 Overrides the type of existing properties
-const obj =  { a: string, b: number }  as const;
+const obj = { a: string, b: number } as const;
 type Value = Override<typeof obj, { b: string }>
 Value contains: { a:string, b: string }
-
-## Type Parameters
-
-| Type Parameter |
-| ------ |
-| `T` |
-| `U` |

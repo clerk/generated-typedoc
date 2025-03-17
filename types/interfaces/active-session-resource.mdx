@@ -7,14 +7,14 @@ and authentication factors
 
 ## Properties
 
-| Property | Type | Description | Overrides | Inherited from |
-| ------ | ------ | ------ | ------ | ------ |
-| <a id="end"></a> `end` | () => `Promise`\<[`SessionResource`](session-resource.mdx)\> | Marks the session as ended. The session will no longer be active for this `Client` and its status will become **ended**. | - | [`SessionResource`](session-resource.mdx).[`end`](SessionResource.mdx#end) |
-| <a id="factorverificationage"></a> `factorVerificationAge` | `null` \| \[`number`, `number`\] | An array where each item represents the number of minutes since the last verification of a first or second factor: `[firstFactorAge, secondFactorAge]`. | - | [`SessionResource`](session-resource.mdx).[`factorVerificationAge`](SessionResource.mdx#factorverificationage) |
-| <a id="id"></a> `id` | `string` | The unique identifier for the session. | - | [`SessionResource`](session-resource.mdx).[`id`](SessionResource.mdx#id) |
-| <a id="pathroot"></a> `pathRoot` | `string` | The root path of the resource. | - | [`SessionResource`](session-resource.mdx).[`pathRoot`](SessionResource.mdx#pathroot) |
-| <a id="status"></a> `status` | `"active"` | The current state of the session. | [`SessionResource`](session-resource.mdx).[`status`](SessionResource.mdx#status) | - |
-| <a id="user"></a> `user` | `UserResource` | The user associated with the session. | [`SessionResource`](session-resource.mdx).[`user`](SessionResource.mdx#user) | - |
+| Property                                                   | Type                                                         | Description                                                                                                                                             | Overrides                                                                        | Inherited from                                                                                                 |
+| ---------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| <a id="end"></a> `end`                                     | () => `Promise`\<[`SessionResource`](session-resource.mdx)\> | Marks the session as ended. The session will no longer be active for this `Client` and its status will become **ended**.                                | -                                                                                | [`SessionResource`](session-resource.mdx).[`end`](SessionResource.mdx#end)                                     |
+| <a id="factorverificationage"></a> `factorVerificationAge` | `null` \| \[`number`, `number`\]                             | An array where each item represents the number of minutes since the last verification of a first or second factor: `[firstFactorAge, secondFactorAge]`. | -                                                                                | [`SessionResource`](session-resource.mdx).[`factorVerificationAge`](SessionResource.mdx#factorverificationage) |
+| <a id="id"></a> `id`                                       | `string`                                                     | The unique identifier for the session.                                                                                                                  | -                                                                                | [`SessionResource`](session-resource.mdx).[`id`](SessionResource.mdx#id)                                       |
+| <a id="pathroot"></a> `pathRoot`                           | `string`                                                     | The root path of the resource.                                                                                                                          | -                                                                                | [`SessionResource`](session-resource.mdx).[`pathRoot`](SessionResource.mdx#pathroot)                           |
+| <a id="status"></a> `status`                               | `"active"`                                                   | The current state of the session.                                                                                                                       | [`SessionResource`](session-resource.mdx).[`status`](SessionResource.mdx#status) | -                                                                                                              |
+| <a id="user"></a> `user`                                   | `UserResource`                                               | The user associated with the session.                                                                                                                   | [`SessionResource`](session-resource.mdx).[`user`](SessionResource.mdx#user)     | -                                                                                                              |
 
 ## Methods
 
@@ -24,9 +24,9 @@ Reload the resource and return the resource itself.
 
 #### Parameters
 
-| Parameter | Type |
-| ------ | ------ |
-| `p`? | `ClerkResourceReloadParams` |
+| Parameter | Type                        |
+| --------- | --------------------------- |
+| `p`?      | `ClerkResourceReloadParams` |
 
 #### Returns
 

@@ -1,19 +1,17 @@
-> **UseSessionListReturn**: \{ `isLoaded`: `false`; `sessions`: `undefined`; `setActive`: `undefined`; \} \| \{ `isLoaded`: `true`; `sessions`: [`SessionResource`](../interfaces/session-resource.mdx)[]; `setActive`: [`SetActive`](set-active.mdx); \}
-
 ## Type declaration
 
 \{ `isLoaded`: `false`; `sessions`: `undefined`; `setActive`: `undefined`; \}
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| `isLoaded` | `false` | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
-| `sessions` | `undefined` | A list of sessions that have been registered on the client device. |
-| `setActive` | `undefined` | A function that sets the active session and/or organization. |
+| Name        | Type        | Description                                                                                                              |
+| ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `isLoaded`  | `false`     | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
+| `sessions`  | `undefined` | A list of sessions that have been registered on the client device.                                                       |
+| `setActive` | `undefined` | A function that sets the active session and/or organization.                                                             |
 
 \{ `isLoaded`: `true`; `sessions`: [`SessionResource`](../interfaces/session-resource.mdx)[]; `setActive`: [`SetActive`](set-active.mdx); \}
 
-| Name | Type |
-| ------ | ------ |
-| `isLoaded` | `true` |
-| `sessions` | [`SessionResource`](../interfaces/session-resource.mdx)[] |
-| `setActive` | [`SetActive`](set-active.mdx) |
+| Name        | Type                                                      |
+| ----------- | --------------------------------------------------------- |
+| `isLoaded`  | `true`                                                    |
+| `sessions`  | [`SessionResource`](../interfaces/session-resource.mdx)[] |
+| `setActive` | [`SetActive`](set-active.mdx)                             |

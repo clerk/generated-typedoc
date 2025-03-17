@@ -1,19 +1,17 @@
-> **UseSignUpReturn**: \{ `isLoaded`: `false`; `setActive`: `undefined`; `signUp`: `undefined`; \} \| \{ `isLoaded`: `true`; `setActive`: [`SetActive`](set-active.mdx); `signUp`: [`SignUpResource`](../interfaces/sign-up-resource.mdx); \}
-
 ## Type declaration
 
 \{ `isLoaded`: `false`; `setActive`: `undefined`; `signUp`: `undefined`; \}
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| `isLoaded` | `false` | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
-| `setActive` | `undefined` | A function that sets the active session. |
-| `signUp` | `undefined` | An object that contains the current sign-up attempt status and methods to create a new sign-up attempt. |
+| Name        | Type        | Description                                                                                                              |
+| ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `isLoaded`  | `false`     | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
+| `setActive` | `undefined` | A function that sets the active session.                                                                                 |
+| `signUp`    | `undefined` | An object that contains the current sign-up attempt status and methods to create a new sign-up attempt.                  |
 
 \{ `isLoaded`: `true`; `setActive`: [`SetActive`](set-active.mdx); `signUp`: [`SignUpResource`](../interfaces/sign-up-resource.mdx); \}
 
-| Name | Type |
-| ------ | ------ |
-| `isLoaded` | `true` |
-| `setActive` | [`SetActive`](set-active.mdx) |
-| `signUp` | [`SignUpResource`](../interfaces/sign-up-resource.mdx) |
+| Name        | Type                                                   |
+| ----------- | ------------------------------------------------------ |
+| `isLoaded`  | `true`                                                 |
+| `setActive` | [`SetActive`](set-active.mdx)                          |
+| `signUp`    | [`SignUpResource`](../interfaces/sign-up-resource.mdx) |
