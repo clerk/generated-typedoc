@@ -2,11 +2,11 @@ The `useSession()` hook provides access to the current user's [`Session`](/docs/
 
 ## Returns
 
-| Name                                 | Type                                                                                                             | Description                                                                                                              |
-| ------------------------------------ | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| <a id="isloaded"></a> `isLoaded`     | `boolean`                                                                                                        | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
-| <a id="issignedin"></a> `isSignedIn` | `undefined` \| `boolean`                                                                                         | A boolean that indicates whether a user is currently signed in.                                                          |
-| <a id="session"></a> `session`       | `undefined` \| `null` \| [`SignedInSessionResource`](../../../types/type-aliases/signed-in-session-resource.mdx) | Holds the current active session for the user.                                                                           |
+| Name                                 | Type                                                                                                                    | Description                                                                                                              |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| <a id="isloaded"></a> `isLoaded`     | `boolean`                                                                                                               | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
+| <a id="issignedin"></a> `isSignedIn` | <code>undefined \| boolean</code>                                                                                       | A boolean that indicates whether a user is currently signed in.                                                          |
+| <a id="session"></a> `session`       | <code>undefined \| null \| [SignedInSessionResource](../../../types/type-aliases/signed-in-session-resource.mdx)</code> | Holds the current active session for the user.                                                                           |
 
 ## Example
 
