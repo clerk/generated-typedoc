@@ -16,7 +16,7 @@ The `useReverification()` hook is used to handle a session's reverification flow
 
 The `useReverification()` hook returns an array with the "enhanced" fetcher.
 
-## Examples
+## Example
 
 ### Handle cancellation of the reverification process
 
@@ -25,48 +25,32 @@ The following example demonstrates how to handle scenarios where a user cancels 
 In the following example, `myFetcher` would be a function in your backend that fetches data from the route that requires reverification. See the [guide on how to require reverification](/docs/guides/reverification) for more information.
 
 ```tsx {{ filename: 'src/components/MyButton.tsx' }}
-import { useReverification } from "@clerk/react";
-
-export function MyButton() {
-  const [enhancedFetcher] = useReverification(myFetcher);
-
-  const handleClick = async () => {
-    const myData = await enhancedFetcher();
-    // If `myData` is null, the user canceled the reverification process
-    // You can choose how your app responds. This example returns null.
-    if (!myData) return;
-  };
-
-  return <button onClick={handleClick}>Update User</button>;
-}
-```
-
-### Handle `throwOnCancel`
-
-When `throwOnCancel` is set to `true`, the fetcher will throw a `ClerkRuntimeError` with the code `"reverification_cancelled"` if the user cancels the reverification flow (for example, by closing the modal). This error can be caught and handled according to your app's needs. For example, by displaying a toast notification to the user or silently ignoring the cancellation.
-
-In this example, `myFetcher` would be a function in your backend that fetches data from the route that requires reverification. See the [guide on how to require reverification](/docs/guides/reverification) for more information.
-
-```tsx {{ filename: 'src/components/MyButton.tsx' }}
 import { useReverification } from "@clerk/clerk-react";
-import { isClerkRuntimeError } from "@clerk/clerk-react/errors";
+import { isReverificationCancelledError } from "@clerk/clerk-react/error";
+
+type MyData = {
+  balance: number;
+};
 
 export function MyButton() {
-  const [enhancedFetcher] = useReverification(myFetcher, {
-    throwOnCancel: true,
-  });
+  const fetchMyData = () =>
+    fetch("/api/balance").then((res) => res.json() as Promise<MyData>);
+  const enhancedFetcher = useReverification(fetchMyData);
 
   const handleClick = async () => {
     try {
       const myData = await enhancedFetcher();
+      //     ^ is types as `MyData`
     } catch (e) {
-      // Handle if user cancels the reverification process
-      if (isClerkRuntimeError(e) && e.code === "reverification_cancelled") {
-        console.error("User cancelled reverification", e.code);
+      // Handle error returned from the fetcher here
+
+      // You can also handle cancellation with the following
+      if (isReverificationCancelledError(err)) {
+        // Handle the cancellation error here
       }
     }
   };
 
-  return <button onClick={handleClick}>Update user</button>;
+  return <button onClick={handleClick}>Update User</button>;
 }
 ```
