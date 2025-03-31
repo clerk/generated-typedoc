@@ -2,11 +2,11 @@ The `useSignIn()` hook provides access to the [`SignIn`](/docs/references/javasc
 
 ## Returns
 
-| Name        | Type                                                           | Description                                                                                                              |
-| ----------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `isLoaded`  | `boolean`                                                      | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
-| `setActive` | <code>undefined \| (setActiveParams) => Promise\<void\></code> | A function that sets the active session.                                                                                 |
-| `signIn`    | `any`                                                          | An object that contains the current sign-in attempt status and methods to create a new sign-in attempt.                  |
+| Name        | Type                                                                                                                               | Description                                                                                                              |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `isLoaded`  | `boolean`                                                                                                                          | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
+| `setActive` | <code>undefined \| <code>([setActiveParams](/docs/references/javascript/types/set-active-params)) => Promise\<void\></code></code> | A function that sets the active session.                                                                                 |
+| `signIn`    | `any`                                                                                                                              | An object that contains the current sign-in attempt status and methods to create a new sign-in attempt.                  |
 
 ## Examples
 

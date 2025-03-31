@@ -7,26 +7,26 @@ You can configure proxy and satellite domains in a few ways:
 
 ## Type declaration
 
-\{ `domain`: `never`; `isSatellite`: `never`; `proxyUrl`: <code>never \| string \| (url) => string</code>; \}
+\{ `domain`: `never`; `isSatellite`: `never`; `proxyUrl`: <code>never \| string \| <code>(url) => string</code></code>; \}
 
-| Name           | Type                                            | Description                                                                                                                                                                                       |
-| -------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `domain?`      | `never`                                         | **Required if your application is a satellite application**. Sets the domain of the satellite application.                                                                                        |
-| `isSatellite?` | `never`                                         | Whether the application is a satellite application.                                                                                                                                               |
-| `proxyUrl?`    | <code>never \| string \| (url) => string</code> | The URL that Clerk will proxy requests to. Required for applications that run behind a reverse proxy. Can be either a relative path (`/__clerk`) or a full URL (`https://<your-domain>/__clerk`). |
+| Name           | Type                                                         | Description                                                                                                                                                                                           |
+| -------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `domain?`      | `never`                                                      | **Required if your application is a satellite application**. Sets the domain of the satellite application.                                                                                            |
+| `isSatellite?` | `never`                                                      | Whether the application is a satellite application.                                                                                                                                                   |
+| `proxyUrl?`    | <code>never \| string \| <code>(url) => string</code></code> | **Required for applications that run behind a reverse proxy**. The URL that Clerk will proxy requests to. Can be either a relative path (`/__clerk`) or a full URL (`https://<your-domain>/__clerk`). |
 
-\{ `domain`: <code>string \| (url) => string</code>; `isSatellite`: `Exclude`\<`ClerkOptions`\[`"isSatellite"`\], `undefined`\>; `proxyUrl`: `never`; \}
+\{ `domain`: <code>string \| <code>(url) => string</code></code>; `isSatellite`: `Exclude`\<`ClerkOptions`\[`"isSatellite"`\], `undefined`\>; `proxyUrl`: `never`; \}
 
 | Name          | Type                                                        |
 | ------------- | ----------------------------------------------------------- |
-| `domain`      | <code>string \| (url) => string</code>                      |
+| `domain`      | <code>string \| <code>(url) => string</code></code>         |
 | `isSatellite` | `Exclude`\<`ClerkOptions`\[`"isSatellite"`\], `undefined`\> |
 | `proxyUrl?`   | `never`                                                     |
 
-\{ `domain`: `never`; `isSatellite`: `Exclude`\<`ClerkOptions`\[`"isSatellite"`\], `undefined`\>; `proxyUrl`: <code>string \| (url) => string</code>; \}
+\{ `domain`: `never`; `isSatellite`: `Exclude`\<`ClerkOptions`\[`"isSatellite"`\], `undefined`\>; `proxyUrl`: <code>string \| <code>(url) => string</code></code>; \}
 
 | Name          | Type                                                        |
 | ------------- | ----------------------------------------------------------- |
 | `domain?`     | `never`                                                     |
 | `isSatellite` | `Exclude`\<`ClerkOptions`\[`"isSatellite"`\], `undefined`\> |
-| `proxyUrl`    | <code>string \| (url) => string</code>                      |
+| `proxyUrl`    | <code>string \| <code>(url) => string</code></code>         |
