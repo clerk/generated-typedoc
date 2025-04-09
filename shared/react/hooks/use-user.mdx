@@ -2,11 +2,11 @@ The `useUser()` hook provides access to the current user's [`User`](/docs/refere
 
 ## Returns
 
-| Name         | Type                                                                               | Description                                                                                                              |
-| ------------ | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `isLoaded`   | `boolean`                                                                          | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
-| `isSignedIn` | <code>undefined \| boolean</code>                                                  | A boolean that returns `true` if the user is signed in.                                                                  |
-| `user`       | <code>undefined \| null \| [UserResource](/docs/references/javascript/user)</code> | The `User` object for the current user. If the user isn't signed in, `user` will be `null`.                              |
+| Name         | Type                                           | Description                                                                                                                     |
+| ------------ | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `isLoaded`   | `boolean`                                      | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads.        |
+| `isSignedIn` | <code>undefined \| boolean</code>              | A boolean that returns `true` if the user is signed in.                                                                         |
+| `user`       | <code>undefined \| null \| UserResource</code> | The [`User`](/docs/references/javascript/user) object for the current user. If the user isn't signed in, `user` will be `null`. |
 
 ## Examples
 

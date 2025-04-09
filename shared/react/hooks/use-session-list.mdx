@@ -2,11 +2,11 @@ The `useSessionList()` hook returns an array of [`Session`](/docs/references/jav
 
 ## Returns
 
-| Name        | Type                                                                                                                               | Description                                                                                                              |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `isLoaded`  | `boolean`                                                                                                                          | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
-| `sessions`  | <code>undefined \| [SessionResource](/docs/references/javascript/session)[]</code>                                                 | A list of sessions that have been registered on the client device.                                                       |
-| `setActive` | <code>undefined \| <code>([setActiveParams](/docs/references/javascript/types/set-active-params)) => Promise\<void\></code></code> | A function that sets the active session and/or organization.                                                             |
+| Name        | Type                                                                               | Description                                                                                                              |
+| ----------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `isLoaded`  | `boolean`                                                                          | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
+| `sessions`  | <code>undefined \| [SessionResource](/docs/references/javascript/session)[]</code> | A list of sessions that have been registered on the client device.                                                       |
+| `setActive` | <code>undefined \| (setActiveParams) => Promise\<void\></code>                     | A function that sets the active session and/or organization.                                                             |
 
 ## Example
 
