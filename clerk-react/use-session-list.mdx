@@ -2,11 +2,15 @@ The `useSessionList()` hook returns an array of [`Session`](/docs/references/jav
 
 ## Returns
 
+### During initialization
+
 | Name        | Type        | Description                                                                                                              |
 | ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------ |
 | `isLoaded`  | `false`     | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
 | `sessions`  | `undefined` | A list of sessions that have been registered on the client device.                                                       |
 | `setActive` | `undefined` | A function that sets the active session and/or organization.                                                             |
+
+### Once loaded
 
 | Name          | Type                                                                                                     |
 | ------------- | -------------------------------------------------------------------------------------------------------- |

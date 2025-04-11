@@ -12,61 +12,73 @@ By default, Next.js opts all routes into static rendering. If you need to opt a 
 
 ## Returns
 
-| Name         | Type                                                                                          | Description                                                                                                                                                                                                |
-| ------------ | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `actor`      | `undefined`                                                                                   | The JWT actor for the session. Holds identifier for the user that is impersonating the current user. Read more about [impersonation](/docs/users/user-impersonation).                                      |
-| `getToken()` | <code>(options?) => Promise\<null \| string\></code>                                          | A function that retrieves the current user's session token or a custom JWT template. Returns a promise that resolves to the token. See the [reference doc](/docs/references/javascript/session#get-token). |
-| `has`        | `undefined`                                                                                   | A function that checks if the user has specific permissions or roles. See the [reference doc](/docs/references/backend/types/auth-object#has).                                                             |
-| `isLoaded`   | `false`                                                                                       | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads.                                                                                   |
-| `isSignedIn` | `undefined`                                                                                   | A boolean that indicates whether a user is currently signed in.                                                                                                                                            |
-| `orgId`      | `undefined`                                                                                   | The ID of the user's active organization.                                                                                                                                                                  |
-| `orgRole`    | `undefined`                                                                                   | The current user's role in their active organization.                                                                                                                                                      |
-| `orgSlug`    | `undefined`                                                                                   | The URL-friendly identifier of the user's active organization.                                                                                                                                             |
-| `sessionId`  | `undefined`                                                                                   | The ID for the current session.                                                                                                                                                                            |
-| `signOut()`  | \{<code>(options?): Promise\<void\>; (signOutCallback?, options?): Promise\<void\></code>; \} | A function that signs out the current user. Returns a promise that resolves when complete. See the [reference doc](/docs/references/javascript/clerk#sign-out).                                            |
-| `userId`     | `undefined`                                                                                   | The ID of the current user.                                                                                                                                                                                |
+### During initialization
 
-| Name         | Type                                                                                          |
-| ------------ | --------------------------------------------------------------------------------------------- |
-| `actor`      | `null`                                                                                        |
-| `getToken()` | <code>(options?) => Promise\<null \| string\></code>                                          |
-| `has()`      | <code>(params) => false</code>                                                                |
-| `isLoaded`   | `true`                                                                                        |
-| `isSignedIn` | `false`                                                                                       |
-| `orgId`      | `null`                                                                                        |
-| `orgRole`    | `null`                                                                                        |
-| `orgSlug`    | `null`                                                                                        |
-| `sessionId`  | `null`                                                                                        |
-| `signOut()`  | \{<code>(options?): Promise\<void\>; (signOutCallback?, options?): Promise\<void\></code>; \} |
-| `userId`     | `null`                                                                                        |
+| Name            | Type                                                                                          | Description                                                                                                                                                                                                |
+| --------------- | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `actor`         | `undefined`                                                                                   | The JWT actor for the session. Holds identifier for the user that is impersonating the current user. Read more about [impersonation](/docs/users/user-impersonation).                                      |
+| `getToken()`    | <code>(options?) => Promise\<null \| string\></code>                                          | A function that retrieves the current user's session token or a custom JWT template. Returns a promise that resolves to the token. See the [reference doc](/docs/references/javascript/session#get-token). |
+| `has`           | `undefined`                                                                                   | A function that checks if the user has specific permissions or roles. See the [reference doc](/docs/references/backend/types/auth-object#has).                                                             |
+| `isLoaded`      | `false`                                                                                       | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads.                                                                                   |
+| `isSignedIn`    | `undefined`                                                                                   | A boolean that indicates whether a user is currently signed in.                                                                                                                                            |
+| `orgId`         | `undefined`                                                                                   | The ID of the user's active organization.                                                                                                                                                                  |
+| `orgRole`       | `undefined`                                                                                   | The current user's role in their active organization.                                                                                                                                                      |
+| `orgSlug`       | `undefined`                                                                                   | The URL-friendly identifier of the user's active organization.                                                                                                                                             |
+| `sessionClaims` | `undefined`                                                                                   | The JWT claims for the current session.                                                                                                                                                                    |
+| `sessionId`     | `undefined`                                                                                   | The ID for the current session.                                                                                                                                                                            |
+| `signOut()`     | \{<code>(options?): Promise\<void\>; (signOutCallback?, options?): Promise\<void\></code>; \} | A function that signs out the current user. Returns a promise that resolves when complete. See the [reference doc](/docs/references/javascript/clerk#sign-out).                                            |
+| `userId`        | `undefined`                                                                                   | The ID of the current user.                                                                                                                                                                                |
 
-| Name         | Type                                                                                          |
-| ------------ | --------------------------------------------------------------------------------------------- |
-| `actor`      | <code>null \| \{[x: string]: unknown; sub: string; \}</code>                                  |
-| `getToken()` | <code>(options?) => Promise\<null \| string\></code>                                          |
-| `has()`      | <code>(isAuthorizedParams) => boolean</code>                                                  |
-| `isLoaded`   | `true`                                                                                        |
-| `isSignedIn` | `true`                                                                                        |
-| `orgId`      | `null`                                                                                        |
-| `orgRole`    | `null`                                                                                        |
-| `orgSlug`    | `null`                                                                                        |
-| `sessionId`  | `string`                                                                                      |
-| `signOut()`  | \{<code>(options?): Promise\<void\>; (signOutCallback?, options?): Promise\<void\></code>; \} |
-| `userId`     | `string`                                                                                      |
+### When signed out
 
-| Name         | Type                                                                                          |
-| ------------ | --------------------------------------------------------------------------------------------- |
-| `actor`      | <code>null \| \{[x: string]: unknown; sub: string; \}</code>                                  |
-| `getToken()` | <code>(options?) => Promise\<null \| string\></code>                                          |
-| `has()`      | <code>(isAuthorizedParams) => boolean</code>                                                  |
-| `isLoaded`   | `true`                                                                                        |
-| `isSignedIn` | `true`                                                                                        |
-| `orgId`      | `string`                                                                                      |
-| `orgRole`    | [OrganizationCustomRoleKey](/docs/references/javascript/types/organization-custom-role-key)   |
-| `orgSlug`    | <code>null \| string</code>                                                                   |
-| `sessionId`  | `string`                                                                                      |
-| `signOut()`  | \{<code>(options?): Promise\<void\>; (signOutCallback?, options?): Promise\<void\></code>; \} |
-| `userId`     | `string`                                                                                      |
+| Name            | Type                                                                                          |
+| --------------- | --------------------------------------------------------------------------------------------- |
+| `actor`         | `null`                                                                                        |
+| `getToken()`    | <code>(options?) => Promise\<null \| string\></code>                                          |
+| `has()`         | <code>(params) => false</code>                                                                |
+| `isLoaded`      | `true`                                                                                        |
+| `isSignedIn`    | `false`                                                                                       |
+| `orgId`         | `null`                                                                                        |
+| `orgRole`       | `null`                                                                                        |
+| `orgSlug`       | `null`                                                                                        |
+| `sessionClaims` | `null`                                                                                        |
+| `sessionId`     | `null`                                                                                        |
+| `signOut()`     | \{<code>(options?): Promise\<void\>; (signOutCallback?, options?): Promise\<void\></code>; \} |
+| `userId`        | `null`                                                                                        |
+
+### When signed in (no active organization)
+
+| Name            | Type                                                                                          |
+| --------------- | --------------------------------------------------------------------------------------------- |
+| `actor`         | <code>null \| \{[x: string]: unknown; sub: string; \}</code>                                  |
+| `getToken()`    | <code>(options?) => Promise\<null \| string\></code>                                          |
+| `has()`         | <code>(isAuthorizedParams) => boolean</code>                                                  |
+| `isLoaded`      | `true`                                                                                        |
+| `isSignedIn`    | `true`                                                                                        |
+| `orgId`         | `null`                                                                                        |
+| `orgRole`       | `null`                                                                                        |
+| `orgSlug`       | `null`                                                                                        |
+| `sessionClaims` | `JwtPayload`                                                                                  |
+| `sessionId`     | `string`                                                                                      |
+| `signOut()`     | \{<code>(options?): Promise\<void\>; (signOutCallback?, options?): Promise\<void\></code>; \} |
+| `userId`        | `string`                                                                                      |
+
+### When signed in (with active organization)
+
+| Name            | Type                                                                                          |
+| --------------- | --------------------------------------------------------------------------------------------- |
+| `actor`         | <code>null \| \{[x: string]: unknown; sub: string; \}</code>                                  |
+| `getToken()`    | <code>(options?) => Promise\<null \| string\></code>                                          |
+| `has()`         | <code>(isAuthorizedParams) => boolean</code>                                                  |
+| `isLoaded`      | `true`                                                                                        |
+| `isSignedIn`    | `true`                                                                                        |
+| `orgId`         | `string`                                                                                      |
+| `orgRole`       | [OrganizationCustomRoleKey](/docs/references/javascript/types/organization-custom-role-key)   |
+| `orgSlug`       | <code>null \| string</code>                                                                   |
+| `sessionClaims` | `JwtPayload`                                                                                  |
+| `sessionId`     | `string`                                                                                      |
+| `signOut()`     | \{<code>(options?): Promise\<void\>; (signOutCallback?, options?): Promise\<void\></code>; \} |
+| `userId`        | `string`                                                                                      |
 
 ## Example
 

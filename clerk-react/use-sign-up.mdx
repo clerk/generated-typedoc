@@ -2,11 +2,15 @@ The `useSignUp()` hook provides access to the [`SignUp`](/docs/references/javasc
 
 ## Returns
 
+### During initialization
+
 | Name        | Type        | Description                                                                                                              |
 | ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------ |
 | `isLoaded`  | `false`     | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
 | `setActive` | `undefined` | A function that sets the active session.                                                                                 |
 | `signUp`    | `undefined` | An object that contains the current sign-up attempt status and methods to create a new sign-up attempt.                  |
+
+### Once loaded
 
 | Name          | Type                                                                                                     |
 | ------------- | -------------------------------------------------------------------------------------------------------- |
