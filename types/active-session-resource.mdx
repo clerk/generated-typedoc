@@ -1,0 +1,37 @@
+Represents a session resource that has completed all pending tasks
+and authentication factors
+
+## Extends
+
+- [`SessionResource`](/docs/references/javascript/session)
+
+## Properties
+
+| Property                                                   | Type                                                                                 | Description                                                                                                                                             | Overrides                                                                                                       | Inherited from                                                                                                                                |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| <a id="end"></a> `end`                                     | <code>() => Promise\<[SessionResource](/docs/references/javascript/session)\></code> | Marks the session as ended. The session will no longer be active for this `Client` and its status will become **ended**.                                | -                                                                                                               | [`SessionResource`](/docs/references/javascript/session).[`end`](/docs/references/javascript/session#end)                                     |
+| <a id="factorverificationage"></a> `factorVerificationAge` | <code>null \| \[number, number\]</code>                                              | An array where each item represents the number of minutes since the last verification of a first or second factor: `[firstFactorAge, secondFactorAge]`. | -                                                                                                               | [`SessionResource`](/docs/references/javascript/session).[`factorVerificationAge`](/docs/references/javascript/session#factorverificationage) |
+| <a id="id"></a> `id`                                       | `string`                                                                             | The unique identifier for the session.                                                                                                                  | -                                                                                                               | [`SessionResource`](/docs/references/javascript/session).[`id`](/docs/references/javascript/session#id)                                       |
+| <a id="pathroot"></a> `pathRoot`                           | `string`                                                                             | The root path of the resource.                                                                                                                          | -                                                                                                               | [`SessionResource`](/docs/references/javascript/session).[`pathRoot`](/docs/references/javascript/session#pathroot)                           |
+| <a id="status"></a> `status`                               | `"active"`                                                                           | The current state of the session.                                                                                                                       | [`SessionResource`](/docs/references/javascript/session).[`status`](/docs/references/javascript/session#status) | -                                                                                                                                             |
+| <a id="user"></a> `user`                                   | [`UserResource`](/docs/references/javascript/user)                                   | The user associated with the session.                                                                                                                   | [`SessionResource`](/docs/references/javascript/session).[`user`](/docs/references/javascript/session#user)     | -                                                                                                                                             |
+
+## Methods
+
+### reload()
+
+Reload the resource and return the resource itself.
+
+#### Parameters
+
+| Parameter | Type                        |
+| --------- | --------------------------- |
+| `p?`      | `ClerkResourceReloadParams` |
+
+#### Returns
+
+`Promise`\<`ActiveSessionResource`\>
+
+#### Inherited from
+
+[`SessionResource`](/docs/references/javascript/session).[`reload`](/docs/references/javascript/session#reload)
