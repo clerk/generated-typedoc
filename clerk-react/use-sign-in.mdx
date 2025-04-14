@@ -2,21 +2,22 @@ The `useSignIn()` hook provides access to the [`SignIn`](/docs/references/javasc
 
 ## Returns
 
-### During initialization {{ combineTables: true }}
-
-| Name        | Type        | Description                                                                                                              |
-| ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `isLoaded`  | `false`     | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
-| `setActive` | `undefined` | A function that sets the active session.                                                                                 |
-| `signIn`    | `undefined` | An object that contains the current sign-in attempt status and methods to create a new sign-in attempt.                  |
-
-### Once loaded {{ combineTables: true }}
-
-| Name          | Type                                                                                                     |
-| ------------- | -------------------------------------------------------------------------------------------------------- |
-| `isLoaded`    | `true`                                                                                                   |
-| `setActive()` | <code>([setActiveParams](/docs/references/javascript/types/set-active-params)) => Promise\<void\></code> |
-| `signIn`      | `SignInResource`                                                                                         |
+<Tabs items={['Initialization', 'Loaded']}>
+<Tab>
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `isLoaded` | `false` | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
+| `setActive` | `undefined` | A function that sets the active session. |
+| `signIn` | `undefined` | An object that contains the current sign-in attempt status and methods to create a new sign-in attempt. |
+</Tab>
+<Tab>
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `isLoaded` | `true` | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
+| `setActive()` | <code>([setActiveParams](/docs/references/javascript/types/set-active-params)) => Promise\<void\></code> | A function that sets the active session. |
+| `signIn` | `SignInResource` | An object that contains the current sign-in attempt status and methods to create a new sign-in attempt. |
+</Tab>
+</Tabs>
 
 ## Examples
 

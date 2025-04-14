@@ -9,29 +9,29 @@ The `useSession()` hook provides access to the current user's [`Session`](/docs/
 
 ## Returns
 
-### During initialization {{ combineTables: true }}
-
-| Name         | Type        | Description                                                                                                              |
-| ------------ | ----------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `isLoaded`   | `false`     | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
-| `isSignedIn` | `undefined` | A boolean that indicates whether a user is currently signed in.                                                          |
-| `session`    | `undefined` | Holds the current active session for the user.                                                                           |
-
-### When signed out {{ combineTables: true }}
-
-| Name         | Type    |
-| ------------ | ------- |
-| `isLoaded`   | `true`  |
-| `isSignedIn` | `false` |
-| `session`    | `null`  |
-
-### When signed in {{ combineTables: true }}
-
-| Name         | Type                                                             |
-| ------------ | ---------------------------------------------------------------- |
-| `isLoaded`   | `true`                                                           |
-| `isSignedIn` | `true`                                                           |
-| `session`    | [`SignedInSessionResource`](/docs/references/javascript/session) |
+<Tabs items={['Initialization', 'Signed out', 'Signed in']}>
+<Tab>
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `isLoaded` | `false` | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
+| `isSignedIn` | `undefined` | A boolean that indicates whether a user is currently signed in. |
+| `session` | `undefined` | Holds the current active session for the user. |
+</Tab>
+<Tab>
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `isLoaded` | `true` | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
+| `isSignedIn` | `false` | A boolean that indicates whether a user is currently signed in. |
+| `session` | `null` | Holds the current active session for the user. |
+</Tab>
+<Tab>
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `isLoaded` | `true` | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
+| `isSignedIn` | `true` | A boolean that indicates whether a user is currently signed in. |
+| `session` | [`SignedInSessionResource`](/docs/references/javascript/session) | Holds the current active session for the user. |
+</Tab>
+</Tabs>
 
 ## Example
 

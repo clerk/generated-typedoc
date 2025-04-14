@@ -2,21 +2,22 @@ The `useSignUp()` hook provides access to the [`SignUp`](/docs/references/javasc
 
 ## Returns
 
-### During initialization {{ combineTables: true }}
-
-| Name        | Type        | Description                                                                                                              |
-| ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `isLoaded`  | `false`     | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
-| `setActive` | `undefined` | A function that sets the active session.                                                                                 |
-| `signUp`    | `undefined` | An object that contains the current sign-up attempt status and methods to create a new sign-up attempt.                  |
-
-### Once loaded {{ combineTables: true }}
-
-| Name          | Type                                                                                                     |
-| ------------- | -------------------------------------------------------------------------------------------------------- |
-| `isLoaded`    | `true`                                                                                                   |
-| `setActive()` | <code>([setActiveParams](/docs/references/javascript/types/set-active-params)) => Promise\<void\></code> |
-| `signUp`      | [`SignUpResource`](/docs/references/javascript/sign-up)                                                  |
+<Tabs items={['Initialization', 'Loaded']}>
+<Tab>
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `isLoaded` | `false` | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
+| `setActive` | `undefined` | A function that sets the active session. |
+| `signUp` | `undefined` | An object that contains the current sign-up attempt status and methods to create a new sign-up attempt. |
+</Tab>
+<Tab>
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `isLoaded` | `true` | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
+| `setActive()` | <code>([setActiveParams](/docs/references/javascript/types/set-active-params)) => Promise\<void\></code> | A function that sets the active session. |
+| `signUp` | [`SignUpResource`](/docs/references/javascript/sign-up) | An object that contains the current sign-up attempt status and methods to create a new sign-up attempt. |
+</Tab>
+</Tabs>
 
 ## Examples
 
