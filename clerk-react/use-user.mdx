@@ -2,7 +2,7 @@ The `useUser()` hook provides access to the current user's [`User`](/docs/refere
 
 ## Returns
 
-### During initialization
+### During initialization {{ combineTables: true }}
 
 | Name         | Type        | Description                                                                                                              |
 | ------------ | ----------- | ------------------------------------------------------------------------------------------------------------------------ |
@@ -10,7 +10,7 @@ The `useUser()` hook provides access to the current user's [`User`](/docs/refere
 | `isSignedIn` | `undefined` | A boolean that returns `true` if the user is signed in.                                                                  |
 | `user`       | `undefined` | The `User` object for the current user. If the user isn't signed in, `user` will be `null`.                              |
 
-### When signed out
+### When signed out {{ combineTables: true }}
 
 | Name         | Type    |
 | ------------ | ------- |
@@ -18,7 +18,7 @@ The `useUser()` hook provides access to the current user's [`User`](/docs/refere
 | `isSignedIn` | `false` |
 | `user`       | `null`  |
 
-### When signed in
+### When signed in {{ combineTables: true }}
 
 | Name         | Type                                               |
 | ------------ | -------------------------------------------------- |

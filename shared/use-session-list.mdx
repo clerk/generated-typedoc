@@ -2,16 +2,20 @@ The `useSessionList()` hook returns an array of [`Session`](/docs/references/jav
 
 ## Returns
 
+### During initialization {{ combineTables: true }}
+
 | Name        | Type        | Description                                                                                                              |
 | ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------ |
 | `isLoaded`  | `false`     | A boolean that indicates whether Clerk has completed initialization. Initially `false`, becomes `true` once Clerk loads. |
 | `sessions`  | `undefined` | A list of sessions that have been registered on the client device.                                                       |
 | `setActive` | `undefined` | A function that sets the active session and/or organization.                                                             |
 
+### Once loaded {{ combineTables: true }}
+
 | Name          | Type                                                                                                     |
 | ------------- | -------------------------------------------------------------------------------------------------------- |
 | `isLoaded`    | `true`                                                                                                   |
-| `sessions`    | [`SessionResource`](/docs/references/javascript/session)[]                                               |
+| `sessions`    | <code>[SessionResource](/docs/references/javascript/session)[]</code>                                    |
 | `setActive()` | <code>([setActiveParams](/docs/references/javascript/types/set-active-params)) => Promise\<void\></code> |
 
 ## Example
