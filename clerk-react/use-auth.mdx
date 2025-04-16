@@ -26,7 +26,7 @@ This function returns a discriminated union type. There are multiple variants of
 | `orgId` | `undefined` | The ID of the user's active organization. |
 | `orgRole` | `undefined` | The current user's role in their active organization. |
 | `orgSlug` | `undefined` | The URL-friendly identifier of the user's active organization. |
-| `sessionClaims` | `undefined` | The JWT claims for the current session. |
+| `sessionClaims` | `undefined` | The current user's [session claims](/docs/backend-requests/resources/session-tokens). |
 | `sessionId` | `undefined` | The ID for the current session. |
 | `signOut()` | <code>\{ (options?): Promise\<void\>; (signOutCallback?, options?): Promise\<void\>; \}</code> | A function that signs out the current user. Returns a promise that resolves when complete. See the [reference doc](/docs/references/javascript/clerk#sign-out). |
 | `userId` | `undefined` | The ID of the current user. |
@@ -42,7 +42,7 @@ This function returns a discriminated union type. There are multiple variants of
 | `orgId` | `null` | The ID of the user's active organization. |
 | `orgRole` | `null` | The current user's role in their active organization. |
 | `orgSlug` | `null` | The URL-friendly identifier of the user's active organization. |
-| `sessionClaims` | `null` | The JWT claims for the current session. |
+| `sessionClaims` | `null` | The current user's [session claims](/docs/backend-requests/resources/session-tokens). |
 | `sessionId` | `null` | The ID for the current session. |
 | `signOut()` | <code>\{ (options?): Promise\<void\>; (signOutCallback?, options?): Promise\<void\>; \}</code> | A function that signs out the current user. Returns a promise that resolves when complete. See the [reference doc](/docs/references/javascript/clerk#sign-out). |
 | `userId` | `null` | The ID of the current user. |
@@ -58,7 +58,7 @@ This function returns a discriminated union type. There are multiple variants of
 | `orgId` | `null` | The ID of the user's active organization. |
 | `orgRole` | `null` | The current user's role in their active organization. |
 | `orgSlug` | `null` | The URL-friendly identifier of the user's active organization. |
-| `sessionClaims` | `JwtPayload` | The JWT claims for the current session. |
+| `sessionClaims` | `JwtPayload` | The current user's [session claims](/docs/backend-requests/resources/session-tokens). |
 | `sessionId` | `string` | The ID for the current session. |
 | `signOut()` | <code>\{ (options?): Promise\<void\>; (signOutCallback?, options?): Promise\<void\>; \}</code> | A function that signs out the current user. Returns a promise that resolves when complete. See the [reference doc](/docs/references/javascript/clerk#sign-out). |
 | `userId` | `string` | The ID of the current user. |
@@ -74,7 +74,7 @@ This function returns a discriminated union type. There are multiple variants of
 | `orgId` | `string` | The ID of the user's active organization. |
 | `orgRole` | `OrganizationCustomRoleKey` | The current user's role in their active organization. |
 | `orgSlug` | <code>null \| string</code> | The URL-friendly identifier of the user's active organization. |
-| `sessionClaims` | `JwtPayload` | The JWT claims for the current session. |
+| `sessionClaims` | `JwtPayload` | The current user's [session claims](/docs/backend-requests/resources/session-tokens). |
 | `sessionId` | `string` | The ID for the current session. |
 | `signOut()` | <code>\{ (options?): Promise\<void\>; (signOutCallback?, options?): Promise\<void\>; \}</code> | A function that signs out the current user. Returns a promise that resolves when complete. See the [reference doc](/docs/references/javascript/clerk#sign-out). |
 | `userId` | `string` | The ID of the current user. |
