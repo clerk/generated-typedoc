@@ -1,14 +1,17 @@
 The `useAuth()` hook provides access to the current user's authentication state and methods to manage the active session.
 
+> [!NOTE]
+> To access auth data server-side, see the [`Auth` object reference doc](/docs/references/backend/types/auth-object).
+
 <If sdk="nextjs">
 By default, Next.js opts all routes into static rendering. If you need to opt a route or routes into dynamic rendering because you need to access the authentication data at request time, you can create a boundary by passing the `dynamic` prop to `<ClerkProvider>`. See the [guide on rendering modes](/docs/references/nextjs/rendering-modes) for more information, including code examples.
 </If>
 
 ## Parameters
 
-| Parameter                    | Type                                                                             | Description                                                                                                                         |
-| ---------------------------- | -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `initialAuthStateOrOptions?` | <code>null \| \{ treatPendingAsSignedOut: boolean; \} \| InitialAuthState</code> | An object containing the initial authentication state. If not provided, the hook will attempt to derive the state from the context. |
+| Parameter                    | Type                                                                                  | Description                                                                                                                                                                                                                                                                                                     |
+| ---------------------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `initialAuthStateOrOptions?` | <code>null \| \{ treatPendingAsSignedOut: boolean; \} \| Record\<string, any\></code> | An object containing the initial authentication state or options for the `useAuth()` hook. If not provided, the hook will attempt to derive the state from the context. `treatPendingAsSignedOut` is a boolean that indicates whether pending sessions are considered as signed out or not. Defaults to `true`. |
 
 ## Returns
 
