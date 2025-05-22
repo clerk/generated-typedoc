@@ -1,6 +1,6 @@
 Previous known as `createGetAuth`. We needed to create a sync and async variant in order to allow for improvements
 that required dynamic imports (using `require` would not work).
-It powers the synchronous top-level api `getAuh()`.
+It powers the synchronous top-level api `getAuth()`.
 
 ## Parameters
 
@@ -14,11 +14,10 @@ It powers the synchronous top-level api `getAuh()`.
 
 ### Parameters
 
-| Parameter         | Type                                   |
-| ----------------- | -------------------------------------- |
-| `req`             | `RequestLike`                          |
-| `opts?`           | <code>\{ secretKey?: string; \}</code> |
-| `opts.secretKey?` | `string`                               |
+| Parameter | Type                                                                                           |
+| --------- | ---------------------------------------------------------------------------------------------- |
+| `req`     | `RequestLike`                                                                                  |
+| `opts?`   | <code>\{ secretKey?: string; \}</code> & <code>\{ treatPendingAsSignedOut?: boolean; \}</code> |
 
 ### Returns
 

@@ -13,11 +13,10 @@ Should be used with function like `auth()` that are already asynchronous.
 
 ### Parameters
 
-| Parameter         | Type                                   |
-| ----------------- | -------------------------------------- |
-| `req`             | `RequestLike`                          |
-| `opts?`           | <code>\{ secretKey?: string; \}</code> |
-| `opts.secretKey?` | `string`                               |
+| Parameter | Type                                                                                           |
+| --------- | ---------------------------------------------------------------------------------------------- |
+| `req`     | `RequestLike`                                                                                  |
+| `opts?`   | <code>\{ secretKey?: string; \}</code> & <code>\{ treatPendingAsSignedOut?: boolean; \}</code> |
 
 ### Returns
 
