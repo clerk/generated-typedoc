@@ -5,11 +5,10 @@ The `getAuth()` helper retrieves authentication state from the request object.
 
 ## Parameters
 
-| Parameter         | Type                                   | Description                 |
-| ----------------- | -------------------------------------- | --------------------------- |
-| `req`             | `RequestLike`                          | The Next.js request object. |
-| `opts?`           | <code>\{ secretKey?: string; \}</code> | -                           |
-| `opts.secretKey?` | `string`                               | -                           |
+| Parameter | Type                                                                                           | Description                 |
+| --------- | ---------------------------------------------------------------------------------------------- | --------------------------- |
+| `req`     | `RequestLike`                                                                                  | The Next.js request object. |
+| `opts?`   | <code>\{ secretKey?: string; \}</code> & <code>\{ treatPendingAsSignedOut?: boolean; \}</code> | -                           |
 
 ## Returns
 
