@@ -5,14 +5,14 @@ The `getAuth()` helper retrieves authentication state from the request object.
 
 ## Parameters
 
-| Parameter | Type                                                                                           | Description                 |
-| --------- | ---------------------------------------------------------------------------------------------- | --------------------------- |
-| `req`     | `RequestLike`                                                                                  | The Next.js request object. |
-| `opts?`   | <code>\{ secretKey?: string; \}</code> & <code>\{ treatPendingAsSignedOut?: boolean; \}</code> | -                           |
+| Parameter | Type                                                                                                                                                                                                                                                                                  | Description                 |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
+| `req`     | `RequestLike`                                                                                                                                                                                                                                                                         | The Next.js request object. |
+| `opts?`   | <code>\{ secretKey?: string; \}</code> & <code>\{ acceptsToken?: "session_token" \| "api_key" \| "machine_token" \| "oauth_token" \| ("session_token" \| "api_key" \| "machine_token" \| "oauth_token")[] \| "any"; \}</code> & <code>\{ treatPendingAsSignedOut?: boolean; \}</code> | -                           |
 
 ## Returns
 
-`AuthObject` — The `Auth` object. See the [Auth reference](/docs/references/backend/types/auth-object) for more information.
+<code>SignedInAuthObject \| SignedOutAuthObject</code> — The `Auth` object. See the [Auth reference](/docs/references/backend/types/auth-object) for more information.
 
 ## Examples
 
