@@ -1,3 +1,7 @@
+> [!WARNING]
+> This repo has stopped being used, typedoc markdown gets commited directly in to the `clerk/clerk-docs` repo.
+> See this pr where we changed over https://github.com/clerk/clerk-docs/pull/2381
+
 # generated-typedoc
 
 This repository contains the auto-generated Typedoc documentation of [clerk/javascript](https://github.com/clerk/javascript).
